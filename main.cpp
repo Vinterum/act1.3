@@ -1,20 +1,18 @@
-#include <iostream>
-#include <vector>
 #include "Bitacora.h"
 using namespace std;
 int main() {
-    int keyM_i, keyD_i, keyM_f, keyD_f;
-    Bitacora prueba;
-    prueba.cargaDatos("bitacora.txt");
-    prueba.sort();
-    
-    cout << "Dame la fecha de inicio mm/dd: ";
-    cin >> keyM_i;
-    cin >> keyD_i;
-    cout << "Dame la fecha final mm/dd: ";
-    cin >> keyM_f;
-    cin >> keyD_f;
-    prueba.searchRange(keyM_i, keyD_i, keyM_f, keyD_f);
+    //Ingresar fecha de inicio aqui
+    int keyMes_i = 8;
+    int keyDia_i = 1;
+    //Ingresar fecha final aqui
+    int keyMes_f = 8;
+    int keyDia_f = 1;
+
+    Bitacora vec;//Crea el vector donde se guardaran los datos
+    vec.cargaDatos("bitacora.txt"); //Llena el vector
+    vec.sort(); //Ordena
+    vec.searchRange(keyMes_i, keyDia_i, keyMes_f, keyDia_f); //Busqueda de consulta
+    vec.guardar(keyMes_i, keyDia_i, keyMes_f, keyDia_f); //Guarda consulta a .txt
     return 0;
 }
 
